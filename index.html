@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salman Khalid, MBBS | Vascular Surgery Research Portfolio</title>
+<meta name="description" content="Vascular Surgery Research Fellow candidate. Outcomes science, registry analytics, evidence synthesis, and R/Python/SQL workflows for open versus endovascular comparative effectiveness.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#06110f;--surface:#0b1714;--card:#101d19;--card2:#13251f;--border:#1f352f;--border-hi:#2b5147;--text:#b8c6c0;--muted:#7f9088;--heading:#ecf5f1;--white:#f7fbf9;--accent:#38b68f;--accent2:#76d1b6;--gold:#e5bb60;--blue:#6da8d9;--coral:#df7861;--code:#07100e;--font-display:Georgia,"Times New Roman",serif;--font-body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--font-mono:"SF Mono","Cascadia Code",Consolas,monospace}
+html{scroll-behavior:smooth;font-size:15px}body{font-family:var(--font-body);background:linear-gradient(180deg,#06110f 0%,#081311 50%,#060b0a 100%);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
+.hd{position:sticky;top:0;z-index:10;background:rgba(6,17,15,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:.7rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.hd-name{font-family:var(--font-display);font-size:1.1rem;color:var(--heading);font-weight:700;letter-spacing:.04em}
+.hd-name span{color:var(--accent2);font-weight:400;font-size:.85rem;margin-left:.25rem}
+.hd-tag{font-size:.58rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+.links{display:flex;gap:1rem;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.links a:hover{color:var(--accent2)}
+.hero{text-align:center;padding:4rem 1.4rem 2.7rem;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(56,182,143,.14),transparent 58%)}
+.hero:after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--border-hi),transparent)}
+.label{display:inline-block;border:1px solid rgba(118,209,182,.22);color:var(--accent2);font-size:.58rem;text-transform:uppercase;letter-spacing:.2em;padding:.2rem .78rem;border-radius:99px;margin-bottom:1rem}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:2.35rem;color:var(--white);letter-spacing:-.02em}
+.hero h1 strong{font-weight:700}
+.sub{font-size:.84rem;color:var(--muted);margin:.4rem auto 1rem}
+.desc{max-width:820px;margin:0 auto;color:var(--text);font-size:.92rem;opacity:.94}
+.hero-cta{margin-top:1.4rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1rem;border-radius:6px;text-decoration:none;border:1px solid var(--border-hi);color:var(--accent2)}
+.btn.primary{background:rgba(56,182,143,.14);border-color:rgba(56,182,143,.45);color:var(--white)}
+.btn:hover{border-color:var(--accent2);color:var(--white)}
+.metrics{display:flex;justify-content:center;flex-wrap:wrap;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.metric{min-width:130px;text-align:center;padding:1rem .7rem;border-right:1px solid var(--border);flex:1 1 130px}
+.metric:last-child{border-right:none}
+.metric .n{font-family:var(--font-display);font-size:1.35rem;color:var(--accent2);font-weight:700}
+.metric .l{font-size:.55rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.wrap{max-width:1080px;margin:2rem auto;padding:0 1.2rem}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);overflow-x:auto;position:sticky;top:54px;background:rgba(6,17,15,.94);backdrop-filter:blur(10px);z-index:5}
+.tab{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);font-size:.68rem;padding:.7rem 1rem;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.tab.a{border-bottom-color:var(--accent2);color:var(--accent2)}
+.pane{display:none;padding:1.5rem 0;animation:fade .25s ease}
+.pane.a{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+h2{font-family:var(--font-display);font-weight:400;color:var(--heading);font-size:1.45rem;border-bottom:1px solid var(--border);padding-bottom:.35rem;margin:0 0 1rem}
+h3{color:var(--heading);font-size:.95rem;margin-bottom:.35rem}
+h4{color:var(--accent2);font-size:.78rem;margin:.8rem 0 .35rem;letter-spacing:.06em;text-transform:uppercase}
+.lead{color:var(--muted);font-size:.86rem;margin-bottom:1.2rem;max-width:840px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:.85rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+.card,.project,.codebox{background:linear-gradient(180deg,var(--card),#0c1815);border:1px solid var(--border);border-radius:10px;padding:1rem;position:relative;overflow:hidden}
+.card:before,.project:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.card p,.project p{font-size:.82rem;color:var(--text)}
+.tag{display:inline-block;font-size:.56rem;color:var(--accent2);background:rgba(56,182,143,.08);border:1px solid rgba(56,182,143,.18);border-radius:4px;padding:.1rem .4rem;margin:.45rem .18rem 0 0}
+.tag.g{color:var(--gold);border-color:rgba(229,187,96,.22);background:rgba(229,187,96,.06)}
+.tag.b{color:var(--blue);border-color:rgba(109,168,217,.22);background:rgba(109,168,217,.06)}
+.tag.c{color:var(--coral);border-color:rgba(223,120,97,.22);background:rgba(223,120,97,.06)}
+.project{margin-bottom:.9rem}
+.meta{font-size:.58rem;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.35rem}
+.project ul,.card ul{list-style:none;margin-top:.5rem}
+.project li,.card li{font-size:.78rem;color:var(--muted);padding:.16rem 0 .16rem 1rem;position:relative}
+.project li:before,.card li:before{content:"\25B8";position:absolute;left:0;color:var(--accent2)}
+.pub{padding:.9rem 0;border-bottom:1px solid var(--border)}
+.pub:last-child{border-bottom:0}
+.pub .journal{font-size:.6rem;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase}
+.pub h3{font-size:.95rem;margin:.2rem 0}
+.pub p{font-size:.8rem;color:var(--muted)}
+.pub .role{font-size:.62rem;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:.3rem;display:inline-block}
+.codebox{padding:0;margin:1rem 0;background:var(--code)}
+.codehead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding:.45rem .8rem;color:var(--accent2);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase}
+.code{font-family:var(--font-mono);font-size:.72rem;color:#c5d0ca;white-space:pre;overflow-x:auto;padding:.9rem}
+.note{border-left:3px solid var(--accent2);background:rgba(56,182,143,.06);padding:.65rem .85rem;border-radius:0 6px 6px 0;color:var(--muted);font-size:.78rem;margin:.7rem 0}
+.kvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.5rem;margin-top:.7rem}
+.kv{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.55rem .7rem}
+.kv .k{font-size:.55rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.kv .v{font-size:.8rem;color:var(--heading);margin-top:.15rem}
+.timeline{position:relative;padding-left:1rem;margin:.6rem 0}
+.timeline:before{content:"";position:absolute;left:.15rem;top:.3rem;bottom:.3rem;width:1px;background:var(--border-hi)}
+.titem{position:relative;padding:.4rem 0 .5rem .7rem}
+.titem:before{content:"";position:absolute;left:-.42rem;top:.7rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 3px rgba(118,209,182,.18)}
+.titem .yr{font-size:.6rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.titem .ev{font-size:.82rem;color:var(--heading);margin-top:.15rem}
+.titem .ds{font-size:.76rem;color:var(--muted);margin-top:.15rem}
+.cta{text-align:center;padding:2rem 1.2rem;border-top:1px solid var(--border);margin-top:2rem}
+.cta a{color:var(--accent2);text-decoration:none}
+.ft{text-align:center;color:var(--muted);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:1.2rem;border-top:1px solid var(--border)}
+.pull{font-family:var(--font-display);font-size:1.1rem;color:var(--white);border-left:3px solid var(--accent2);padding:.6rem 1rem;margin:1.2rem 0;background:rgba(56,182,143,.05);font-style:italic;line-height:1.5}
+@media(max-width:680px){
+  .hd{flex-direction:column;gap:.35rem;padding:.7rem 1rem}
+  .hero h1{font-size:1.7rem}
+  .metric{min-width:110px}
+  .tabs{scrollbar-width:none;top:84px}
+  .tab{font-size:.62rem;padding:.55rem .65rem}
+}
+@media print{
+  body{background:#fff;color:#111}
+  .hd,.tabs,.hero-cta{display:none}
+  .pane{display:block!important;page-break-inside:avoid}
+  .card,.project,.codebox{break-inside:avoid;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<header class="hd">
+  <div>
+    <div class="hd-name">SALMAN KHALID<span>MBBS</span></div>
+    <div class="hd-tag">Vascular Surgery Research | Outcomes Science | Surgical Data Analytics</div>
+  </div>
+  <nav class="links">
+    <a href="mailto:salmankhalid@kemu.edu.pk">Email</a>
+    <a href="https://salman24012715.github.io">Main Site</a>
+    <a href="https://github.com/salman24012715">GitHub</a>
+    <a href="https://orcid.org/0009-0006-3471-2710">ORCID</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="label">Vascular Surgery Research Portfolio | 2026</div>
+  <h1>Clinical Outcomes, Registry Science &amp; <strong>Vascular Surgery Research</strong></h1>
+  <p class="sub">King Edward Medical University '24 | USMLE Step 1 PASS | J-1 Research Visa Sponsorship Eligible | Available May 2026</p>
+  <p class="desc">M.B.B.S. graduate and surgical research fellow candidate with 50+ operative exposures, vascular-adjacent experience in aneurysm clipping and neurovascular imaging, and a high-output evidence synthesis record across 8,700+ analyzed participants. I bring R, Python, SQL, SPSS, Review Manager, R Shiny dashboards, perioperative data abstraction, and full-stack manuscript production skills to vascular surgery outcomes, registry, quality improvement, and comparative effectiveness research. My focus is on shipping rigorous, reproducible work: clean data dictionaries, pre-registered analysis plans, transparent statistical methods, and figures that translate cleanly from a project meeting to a peer-reviewed publication.</p>
+  <div class="hero-cta">
+    <a class="btn primary" href="mailto:salmankhalid@kemu.edu.pk">Contact for Fellowship Discussion</a>
+    <a class="btn" href="https://github.com/salman24012715">Code &amp; Dashboards</a>
+    <a class="btn" href="https://orcid.org/0009-0006-3471-2710">ORCID Record</a>
+  </div>
+</section>
+
+<div class="metrics">
+  <div class="metric"><div class="n">50+</div><div class="l">OR Exposures</div></div>
+  <div class="metric"><div class="n">20+</div><div class="l">General Surgery Cases</div></div>
+  <div class="metric"><div class="n">30+</div><div class="l">Neuro / Vascular Cases</div></div>
+  <div class="metric"><div class="n">8,700+</div><div class="l">Subjects Analyzed</div></div>
+  <div class="metric"><div class="n">35</div><div class="l">RCTs Synthesized</div></div>
+  <div class="metric"><div class="n">3</div><div class="l">Research Projects</div></div>
+  <div class="metric"><div class="n">2</div><div class="l">Peer-Reviewed Pubs</div></div>
+  <div class="metric"><div class="n">6+</div><div class="l">Statistical Stacks</div></div>
+</div>
+
+<main class="wrap">
+<nav class="tabs" role="tablist">
+  <button class="tab a" data-t="fit">Fellowship Fit</button>
+  <button class="tab" data-t="skills">Skills</button>
+  <button class="tab" data-t="agenda">Vascular Agenda</button>
+  <button class="tab" data-t="clinical">Clinical</button>
+  <button class="tab" data-t="publications">Publications</button>
+  <button class="tab" data-t="code">Code</button>
+  <button class="tab" data-t="workflow">Workflow</button>
+  <button class="tab" data-t="education">Education &amp; Awards</button>
+</nav>
+
+<section class="pane a" id="fit">
+  <h2>Why I Fit a Vascular Surgery Research Fellowship</h2>
+  <p class="lead">My current portfolio was rebuilt from a neurosurgery-centered profile into a focused vascular surgery research candidacy: high-productivity outcomes research, vascular lab and operating room exposure, conference-ready abstracts, manuscript execution, and disciplined collaboration with biostatisticians and clinical mentors.</p>
+
+  <p class="pull">"I want to spend a research fellowship producing the kind of work that survives peer review, changes departmental practice, and earns a categorical surgical training spot."</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Research Fellow Readiness</h3>
+      <p>Comfortable moving projects from question formulation to manuscript: search strategy, IRB/data-use submission, variable dictionaries, statistical analysis, publication figures, abstract preparation, and journal submission with response-to-reviewer cycles.</p>
+      <span class="tag">PRISMA</span><span class="tag">IRB</span><span class="tag">Manuscripts</span><span class="tag">Abstracts</span>
+    </article>
+    <article class="card">
+      <h3>Vascular Surgery Environment Fit</h3>
+      <p>Prepared for Morbidity and Mortality Conference, Didactic Conference, Journal Club, multidisciplinary conferences, simulation lab, outpatient clinic, vascular lab duplex review, operating room exposure, and weekly work alongside an in-house biostatistician.</p>
+      <span class="tag g">M&amp;M</span><span class="tag g">Journal Club</span><span class="tag g">Biostatistics</span><span class="tag g">Vascular Lab</span>
+    </article>
+    <article class="card">
+      <h3>Clinical Data Abstraction</h3>
+      <p>Experienced with EMR-based perioperative abstraction, operative-note structuring, longitudinal recovery tracking, imaging-linked variable capture, and rounds-based presentation of complex surgical patients to mixed audiences.</p>
+      <span class="tag b">EMR</span><span class="tag b">OR Logs</span><span class="tag b">Outcomes</span><span class="tag b">Duplex Variables</span>
+    </article>
+    <article class="card">
+      <h3>Open and Endovascular Mindset</h3>
+      <p>Vascular interests span open versus endovascular comparative effectiveness, carotid disease (CEA/CAS/TCAR), peripheral arterial disease, chronic limb-threatening ischemia, dialysis access maturation, EVAR/TEVAR surveillance, and reintervention outcomes.</p>
+      <span class="tag c">CEA / CAS / TCAR</span><span class="tag c">PAD</span><span class="tag c">CLTI</span><span class="tag c">EVAR / TEVAR</span>
+    </article>
+    <article class="card">
+      <h3>Productivity Track Record</h3>
+      <p>Two peer-reviewed meta-analyses published in 18 months, one in active preparation, three independent projects, and consistent first-author execution from protocol to submission. Output is the differentiator I bring on day one.</p>
+      <span class="tag">First-Author</span><span class="tag">Submission-Ready</span><span class="tag">Reproducible</span>
+    </article>
+    <article class="card">
+      <h3>Categorical Surgery Trajectory</h3>
+      <p>Long-term goal: U.S. categorical general surgery, followed by vascular surgery fellowship. A research year is the lever I will use to convert clinical exposure into peer-reviewed evidence and competitive ERAS metrics.</p>
+      <span class="tag g">General Surgery</span><span class="tag g">Vascular Fellowship</span><span class="tag g">ERAS 2027</span>
+    </article>
+  </div>
+
+  <h4>What I commit to a fellowship</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">Throughput</div><div class="v">Two to four manuscripts annually, plus abstracts at SVS, VAM, and regional vascular meetings</div></div>
+    <div class="kv"><div class="k">Reproducibility</div><div class="v">All analyses delivered as version-controlled R or Python projects with documented variable dictionaries</div></div>
+    <div class="kv"><div class="k">Clinical Integration</div><div class="v">Active presence at M&amp;M, journal club, vascular lab readouts, and OR/clinic exposure as scheduling allows</div></div>
+    <div class="kv"><div class="k">Mentorship Behavior</div><div class="v">Weekly written progress notes, calendared milestones, no surprise blockers</div></div>
+  </div>
+</section>
+
+<section class="pane" id="skills">
+  <h2>Technical and Research Skills</h2>
+  <p class="lead">Skill set is engineered for a vascular surgery research fellowship: registry analytics, time-to-event modeling, propensity methods, evidence synthesis, and a working knowledge of the reporting standards reviewers ask about (STROBE, PRISMA, RECORD, CONSORT, GRADE).</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Outcomes Research</h3>
+      <p>Retrospective cohort design, registry variable engineering, propensity score matching, IPTW, doubly robust estimation, multivariable regression, subgroup and sensitivity analysis, E-values for unmeasured confounding, and covariate balance diagnostics.</p>
+      <span class="tag">MatchIt</span><span class="tag">WeightIt</span><span class="tag">gtsummary</span><span class="tag">cobalt</span>
+    </article>
+    <article class="card">
+      <h3>Time-to-Event Methods</h3>
+      <p>Kaplan-Meier survival, Cox proportional hazards with PH testing, time-varying covariates, competing risks (Fine-Gray), landmark analysis, restricted mean survival time, and endpoints such as amputation-free survival, freedom from reintervention, primary/assisted/secondary patency, mortality, and readmission.</p>
+      <span class="tag">survival</span><span class="tag">survminer</span><span class="tag">cmprsk</span><span class="tag">timeROC</span>
+    </article>
+    <article class="card">
+      <h3>National Database Analytics</h3>
+      <p>Survey-weighted analysis for NSQIP-style and NIS-style datasets, ACS registry structures, VQI-shaped variables, volume-outcome modeling, risk-adjusted complication rates, hierarchical (site-level) models, and 30-day plus longitudinal outcomes.</p>
+      <span class="tag g">survey</span><span class="tag g">SQL</span><span class="tag g">DuckDB</span><span class="tag g">lme4</span>
+    </article>
+    <article class="card">
+      <h3>Interactive Reporting</h3>
+      <p>R Shiny dashboards for cohort exploration, dynamic filters, Kaplan-Meier curves, forest plots, adverse event summaries, and downloadable tables for project meetings, IRB submissions, and grand rounds.</p>
+      <span class="tag b">R Shiny</span><span class="tag b">ggplot2</span><span class="tag b">plotly</span><span class="tag b">DT</span>
+    </article>
+    <article class="card">
+      <h3>Evidence Synthesis</h3>
+      <p>Systematic reviews and meta-analyses using fixed and random effects, meta-regression, network meta-analysis, Cochrane RoB 2, ROBINS-I, PRISMA reporting, forest and funnel plots, Egger's test, and GRADE-ready certainty assessment.</p>
+      <span class="tag">metafor</span><span class="tag">meta</span><span class="tag">Review Manager</span><span class="tag">netmeta</span>
+    </article>
+    <article class="card">
+      <h3>Scientific Communication</h3>
+      <p>First-draft manuscript writing, structured abstracts for SVS/VAM/ESVS, journal-specific formatting, multi-panel figure assembly, response-to-reviewer letters, and LaTeX/Word/Quarto workflows.</p>
+      <span class="tag c">Manuscript Writing</span><span class="tag c">LaTeX</span><span class="tag c">Quarto</span><span class="tag c">Figures</span>
+    </article>
+    <article class="card">
+      <h3>Programming and Data Engineering</h3>
+      <p>R (tidyverse), Python (pandas, scikit-learn, statsmodels), SQL, DuckDB, SPSS. Comfortable with version control, project templating, environment pinning (renv, uv), and Git-based collaboration with mentors and biostatisticians.</p>
+      <span class="tag">R</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Git</span>
+    </article>
+    <article class="card">
+      <h3>Imaging-Linked Variables</h3>
+      <p>Working familiarity with CT perfusion, CTA / MRA review, carotid and lower-extremity duplex variables (PSV, ICA/CCA ratio, ABI, TBI), and translation of imaging metrics into analyzable registry fields.</p>
+      <span class="tag b">CTA / MRA</span><span class="tag b">Duplex</span><span class="tag b">ABI / TBI</span>
+    </article>
+    <article class="card">
+      <h3>Quality Improvement Tooling</h3>
+      <p>Statistical process control charts, run charts, Pareto analysis, root-cause documentation, and PDSA-cycle data capture for departmental M&amp;M and outcomes review.</p>
+      <span class="tag g">SPC</span><span class="tag g">PDSA</span><span class="tag g">M&amp;M</span>
+    </article>
+  </div>
+
+  <h4>Reporting standards routinely applied</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">Observational</div><div class="v">STROBE, RECORD for routinely-collected health data</div></div>
+    <div class="kv"><div class="k">Intervention Trials</div><div class="v">CONSORT for RCTs included in meta-analyses</div></div>
+    <div class="kv"><div class="k">Synthesis</div><div class="v">PRISMA 2020, PRISMA-S for search reporting, GRADE for certainty</div></div>
+    <div class="kv"><div class="k">Risk of Bias</div><div class="v">Cochrane RoB 2, ROBINS-I, AMSTAR 2 for umbrella reviews</div></div>
+  </div>
+</section>
+
+<section class="pane" id="agenda">
+  <h2>Vascular Surgery Research Agenda</h2>
+  <p class="lead">Targeted projects I can scope, scaffold, and ship inside a vascular surgery research fellowship, adjusted to available datasets, institutional VQI access, and mentor priorities. Each project is sized for a publishable unit within 6 to 12 months.</p>
+
+  <article class="project">
+    <div class="meta">Comparative Effectiveness | Carotid, PAD, Aortic</div>
+    <h3>Open versus Endovascular Outcomes</h3>
+    <p>Risk-adjusted comparison of open and endovascular strategies using propensity score matching and inverse probability weighting for 30-day complications, readmission, reintervention, length of stay, and mortality, with sensitivity analyses for unmeasured confounding via E-values.</p>
+    <ul>
+      <li>Candidate areas: carotid disease (CEA vs CAS vs TCAR), PAD, CLTI revascularization, EVAR / TEVAR, dialysis access creation.</li>
+      <li>Outputs: SVS abstract, full manuscript, interactive dashboard, reproducible analysis script, and a one-page summary for departmental QI.</li>
+      <li>Methods: propensity score with caliper matching, IPTW with stabilized weights, doubly robust outcome models, subgroup analysis by age/comorbidity/sex.</li>
+    </ul>
+    <span class="tag">PSM</span><span class="tag">IPTW</span><span class="tag">E-values</span>
+  </article>
+
+  <article class="project">
+    <div class="meta">Survival and Patency</div>
+    <h3>Longitudinal Reintervention and Limb Outcomes</h3>
+    <p>Kaplan-Meier and Cox modeling for amputation-free survival, freedom from reintervention, primary/assisted/secondary patency, endoleak-related reintervention, restenosis, and target-lesion revascularization. Competing risks treated explicitly with Fine-Gray models when mortality precludes the event of interest.</p>
+    <ul>
+      <li>Landmark analyses to address immortal-time bias in delayed interventions.</li>
+      <li>Time-varying covariates for reintervention and changes in medical therapy.</li>
+      <li>Restricted mean survival time as a complement when proportional hazards fails.</li>
+    </ul>
+    <span class="tag">Kaplan-Meier</span><span class="tag">Cox PH</span><span class="tag">Competing Risks</span><span class="tag">RMST</span>
+  </article>
+
+  <article class="project">
+    <div class="meta">Quality Improvement</div>
+    <h3>Morbidity, Readmission, and Vascular Lab Integration</h3>
+    <p>Build a registry-ready QI workflow combining operative details, imaging / duplex variables, perioperative risk factors, and postoperative complications. Output a monthly dashboard suitable for M&amp;M conference, departmental outcomes review, and benchmarking against published risk-adjusted rates.</p>
+    <ul>
+      <li>Standardized variable dictionary mapped to NSQIP / VQI-style schemas.</li>
+      <li>Statistical process control charts for 30-day readmission and surgical site infection.</li>
+      <li>Automated weekly extract from EMR with anonymized exports for analysis.</li>
+    </ul>
+    <span class="tag g">QI</span><span class="tag g">Vascular Lab</span><span class="tag g">M&amp;M</span><span class="tag g">SPC</span>
+  </article>
+
+  <article class="project">
+    <div class="meta">Evidence Synthesis</div>
+    <h3>High-Yield Vascular Systematic Reviews</h3>
+    <p>Rapid reviews and meta-analyses in areas with clinical equipoise: antithrombotic strategies after peripheral interventions, drug-coated technology comparative effectiveness, carotid intervention outcomes, EVAR surveillance imaging strategies, CLTI limb salvage rates by revascularization strategy, and dialysis access maturation.</p>
+    <ul>
+      <li>Pre-registered PROSPERO protocols, dual independent screening, transparent search documentation.</li>
+      <li>Network meta-analysis where multiple comparators exist.</li>
+      <li>GRADE certainty assessment and an honest summary-of-findings table.</li>
+    </ul>
+    <span class="tag b">PRISMA</span><span class="tag b">Meta-analysis</span><span class="tag b">Network</span><span class="tag b">GRADE</span>
+  </article>
+
+  <article class="project">
+    <div class="meta">Machine Learning Adjunct</div>
+    <h3>Risk Prediction for Vascular Intervention</h3>
+    <p>Where appropriate and clinically meaningful, develop or externally validate risk prediction models (logistic regression with regularization, gradient-boosted trees) for outcomes such as 30-day mortality after open AAA repair, major adverse limb events after CLTI revascularization, or readmission after dialysis access creation, reported per TRIPOD-AI.</p>
+    <ul>
+      <li>Calibration emphasis (intercept, slope, calibration plot) over discrimination alone.</li>
+      <li>Decision curve analysis to demonstrate net benefit.</li>
+      <li>Honest discussion of generalizability and external validation needs.</li>
+    </ul>
+    <span class="tag c">TRIPOD-AI</span><span class="tag c">Calibration</span><span class="tag c">DCA</span>
+  </article>
+</section>
+
+<section class="pane" id="clinical">
+  <h2>Clinical and Operative Experience</h2>
+  <p class="lead">Operative exposure is centered on general surgery and neurovascular cases, the two tracks that map most directly onto the day-to-day demands of vascular surgery. The clinical work also informs how I think about variable selection, complication adjudication, and which research questions are clinically tractable.</p>
+
+  <article class="project">
+    <div class="meta">General Surgery | Mayo Hospital Lahore | 2023 to 2024</div>
+    <h3>High-Volume Surgical Clerkship</h3>
+    <p>Assisted in 20+ surgical procedures including open and laparoscopic appendectomies, cholecystectomies, and tension-free hernia repairs. Maintained sterile field discipline; managed drains, urinary catheters, retractors, and operative instruments under attending supervision.</p>
+    <ul>
+      <li>Collected real-time operative data during laparoscopic and robotic cases including operative time, blood loss estimates, and intraoperative events.</li>
+      <li>Abstracted perioperative outcomes for 15+ patients daily and presented at multidisciplinary rounds with imaging context.</li>
+      <li>Maintained an operative log with case-level annotations that fed into a personal portfolio of operative exposure.</li>
+      <li>Participated in trauma intake when assigned, including FAST exam interpretation and triage documentation.</li>
+    </ul>
+  </article>
+
+  <article class="project">
+    <div class="meta">Neurosurgery, Vascular, and Neurovascular | 2023 to 2024</div>
+    <h3>Neurovascular Operating Room and Neuro-ICU Exposure</h3>
+    <p>Assisted in 30+ neurosurgical cases including vascular procedures, intracranial aneurysm clipping, microdiscectomies, and instrumented spinal fusions. Managed retraction and micro-instrument exchange during 15+ microscopic cases under the operating microscope.</p>
+    <ul>
+      <li>Interpreted CT perfusion and CTA / MRA imaging at the workstation and documented ICP monitoring trends during Neuro-ICU rounds.</li>
+      <li>Presented complex postoperative and consult patients with imaging-based management reasoning to attendings and residents.</li>
+      <li>Translated case experience into a perioperative data abstraction practice directly transferable to vascular outcomes work.</li>
+      <li>Participated in multidisciplinary stroke conferences with neurology, neuroradiology, and rehabilitation.</li>
+    </ul>
+  </article>
+
+  <article class="project">
+    <div class="meta">Internal Medicine | 2022</div>
+    <h3>Procedural and Rounds-Based Clinical Skills</h3>
+    <p>Performed venipunctures, peripheral IV insertions, ultrasound-guided central line assistance, ECG interpretation, and led structured case presentations on multidisciplinary rounds.</p>
+    <ul>
+      <li>Comfortable with bedside ultrasound for vascular access and basic hemodynamic assessment.</li>
+      <li>Maintained problem-oriented progress notes consistent with U.S. EMR conventions.</li>
+    </ul>
+  </article>
+
+  <h4>Operative volume snapshot</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">General Surgery</div><div class="v">20+ cases: open / laparoscopic appendectomy, cholecystectomy, hernia repair</div></div>
+    <div class="kv"><div class="k">Neuro / Vascular</div><div class="v">30+ cases: aneurysm clipping, microdiscectomy, spinal fusion, neurovascular</div></div>
+    <div class="kv"><div class="k">Imaging Review</div><div class="v">Routine CT, CTA, MRA, CT perfusion at the workstation</div></div>
+    <div class="kv"><div class="k">ICU Exposure</div><div class="v">Neuro-ICU rounds with ICP monitoring, postoperative neuro checks</div></div>
+  </div>
+</section>
+
+<section class="pane" id="publications">
+  <h2>Research and Publications</h2>
+  <p class="lead">Two peer-reviewed meta-analyses published in 18 months, one project in preparation, and three additional vascular-aligned protocols in scoping. Each entry below includes role, methods, and what I personally executed.</p>
+
+  <div class="pub">
+    <div class="journal">Asian Journal of Psychiatry | Published 2024</div>
+    <h3>Peripartum Esketamine for Post-Partum Depression Prevention</h3>
+    <p>Systematic review and meta-analysis of 12 randomized controlled trials with 1,200+ patients. Pooled effect estimates with random-effects models, heterogeneity quantified with I-squared and prediction intervals, subgroup analyses by dose and timing, and forest plots assembled in R and Review Manager.</p>
+    <span class="role">First Author | DOI 10.1016/j.ajp.2024.104090</span>
+  </div>
+
+  <div class="pub">
+    <div class="journal">European Journal of Gastroenterology &amp; Hepatology | Published 2025</div>
+    <h3>Tegoprazan versus Proton Pump Inhibitors</h3>
+    <p>Systematic review and meta-analysis of 15 randomized controlled trials with 5,000+ participants. Complex subgroup analyses by indication and duration, sensitivity analyses excluding high-risk-of-bias trials, leave-one-out diagnostics in SPSS, and an interactive R Shiny dashboard for cohort exploration during the revision cycle.</p>
+    <span class="role">First Author | DOI 10.1097/MEG.0000000000003030</span>
+  </div>
+
+  <div class="pub">
+    <div class="journal">In Preparation | Target Submission 2026</div>
+    <h3>Lifitegrast 5% Ophthalmic Solution for Dry Eye Disease</h3>
+    <p>Primary data extraction and database management for 8 trials with approximately 2,500 eyes. Cochrane RoB 2 quality assessment, meta-regression in R for dose-response trends, and pre-registered protocol documenting analytical decisions before unblinding to results.</p>
+    <span class="role">First Author | Manuscript Drafting</span>
+  </div>
+
+  <h4>Methods I personally executed across these projects</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">Search and Screening</div><div class="v">PubMed, Embase, Cochrane CENTRAL; dual independent screening with conflict adjudication</div></div>
+    <div class="kv"><div class="k">Statistical Pooling</div><div class="v">Random-effects models, Hartung-Knapp adjustment, prediction intervals, meta-regression</div></div>
+    <div class="kv"><div class="k">Risk of Bias</div><div class="v">Cochrane RoB 2 across all RCTs; ROBINS-I where observational data was included</div></div>
+    <div class="kv"><div class="k">Figures and Reporting</div><div class="v">PRISMA flow diagrams, forest and funnel plots, summary-of-findings tables</div></div>
+  </div>
+</section>
+
+<section class="pane" id="code">
+  <h2>Selected Code Patterns for Vascular Research</h2>
+  <p class="lead">Working snippets I have used or adapted. Each is reproducible against a registry-shaped data frame and is illustrative of how I structure analyses for vascular outcomes work.</p>
+
+  <div class="codebox">
+    <div class="codehead"><span>R</span><span>iptw_vascular_outcomes.R</span></div>
+    <pre class="code">library(WeightIt)
+library(cobalt)
+library(survey)
+
+# Inverse probability of treatment weighting for open vs endovascular
+wt &lt;- weightit(
+  treatment ~ age + sex + diabetes + ckd + smoking + asa_class + baseline_abi,
+  data       = vascular_df,
+  method     = "ps",
+  estimand   = "ATE",
+  stabilize  = TRUE
+)
+
+vascular_df$w &lt;- wt$weights
+love.plot(wt, thresholds = c(m = 0.1), abs = TRUE)
+
+des &lt;- svydesign(ids = ~1, weights = ~w, data = vascular_df)
+fit &lt;- svyglm(major_complication_30d ~ treatment,
+              design = des, family = quasibinomial())
+summary(fit)
+exp(cbind(OR = coef(fit), confint(fit)))</pre>
+  </div>
+  <div class="note"><strong>Use case:</strong> risk-adjusted comparison of open versus endovascular procedures while preserving cohort size and producing reviewer-ready balance diagnostics.</div>
+
+  <div class="codebox">
+    <div class="codehead"><span>R</span><span>amputation_free_survival.R</span></div>
+    <pre class="code">library(survival)
+library(survminer)
+
+# Amputation-free survival for CLTI revascularization
+surv_obj &lt;- Surv(time  = clti_df$followup_days,
+                 event = clti_df$major_amputation_or_death)
+
+cox_fit &lt;- coxph(
+  surv_obj ~ revascularization + age + diabetes + renal_failure + wound_grade,
+  data = clti_df
+)
+
+cox.zph(cox_fit)  # proportional hazards check
+
+ggsurvplot(survfit(cox_fit), data = clti_df,
+           risk.table = TRUE, conf.int = TRUE,
+           legend.title = "Strategy")</pre>
+  </div>
+  <div class="note"><strong>Use case:</strong> CLTI, dialysis access, graft patency, EVAR / TEVAR reintervention, or restenosis endpoints, with a documented PH assumption check.</div>
+
+  <div class="codebox">
+    <div class="codehead"><span>R</span><span>competing_risks_reintervention.R</span></div>
+    <pre class="code">library(cmprsk)
+
+# Fine-Gray subdistribution hazard for freedom from reintervention,
+# with death as a competing risk
+fg &lt;- crr(
+  ftime    = evar_df$followup_days,
+  fstatus  = evar_df$event_code,   # 0 censored, 1 reintervention, 2 death
+  cov1     = model.matrix(~ age + sex + aaa_diameter + endoleak_type,
+                          data = evar_df)[, -1],
+  failcode = 1,
+  cencode  = 0
+)
+summary(fg)</pre>
+  </div>
+  <div class="note"><strong>Use case:</strong> when mortality precludes the event of interest (a typical situation in elderly AAA cohorts), competing-risks modeling is the honest default.</div>
+
+  <div class="codebox">
+    <div class="codehead"><span>R</span><span>meta_analysis_vascular.R</span></div>
+    <pre class="code">library(meta)
+
+# Random-effects meta-analysis with Hartung-Knapp adjustment
+m &lt;- metabin(
+  event.e = events_drug,   n.e = total_drug,
+  event.c = events_ctrl,   n.c = total_ctrl,
+  studlab = trial,
+  data    = trials_df,
+  sm      = "RR",
+  method.tau = "REML",
+  hakn    = TRUE,
+  prediction = TRUE
+)
+summary(m)
+forest(m, leftcols = c("studlab", "event.e", "n.e", "event.c", "n.c"))</pre>
+  </div>
+  <div class="note"><strong>Use case:</strong> standard pooled estimate with a prediction interval, the way reviewers increasingly expect random-effects meta-analyses to be reported.</div>
+
+  <div class="codebox">
+    <div class="codehead"><span>Python</span><span>nsqip_cohort_pull.py</span></div>
+    <pre class="code">import duckdb, pandas as pd
+
+con = duckdb.connect("nsqip_2017_2022.duckdb")
+
+cohort = con.execute("""
+  SELECT case_id, age, sex, race, asa_class,
+         diabetes, smoker, ckd_stage,
+         cpt_code, procedure_group,
+         death_30d, readmission_30d, sssi_30d, length_of_stay
+  FROM nsqip
+  WHERE procedure_group IN ('EVAR','OPEN_AAA','CEA','CAS','LE_BYPASS')
+    AND age BETWEEN 40 AND 90
+""").df()
+
+cohort["composite_morbidity"] = (
+    cohort[["death_30d","readmission_30d","sssi_30d"]].max(axis=1)
+)
+cohort.to_parquet("vascular_cohort.parquet")</pre>
+  </div>
+  <div class="note"><strong>Use case:</strong> fast cohort extraction from a NSQIP-style dataset stored as DuckDB, ready for downstream PSM / IPTW analysis in R.</div>
+</section>
+
+<section class="pane" id="workflow">
+  <h2>Workflow, Reproducibility, and Mentor Collaboration</h2>
+  <p class="lead">A research fellowship is also a project-management problem. The workflow below is how I keep multiple projects moving, keep mentors unblocked, and keep manuscripts audit-ready months after submission.</p>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Project Skeleton</h3>
+      <p>Every project is a Git repository with a fixed layout: <code>data/</code> (read-only), <code>R/</code> or <code>src/</code>, <code>analysis/</code>, <code>figures/</code>, <code>manuscript/</code>, and a <code>README.md</code> with the question, primary outcome, and analysis plan. Environments pinned with <code>renv</code> for R and <code>uv</code> or <code>conda</code> for Python.</p>
+      <span class="tag">Git</span><span class="tag">renv</span><span class="tag">uv</span><span class="tag">README-driven</span>
+    </article>
+    <article class="card">
+      <h3>Variable Dictionary First</h3>
+      <p>Before any modeling, a variable dictionary is drafted: name, source field, type, allowed values, derivation rules, and clinical justification. This is the single artifact biostatisticians, mentors, and reviewers ask for. Building it first prevents most downstream rework.</p>
+      <span class="tag g">Data Dictionary</span><span class="tag g">STROBE</span>
+    </article>
+    <article class="card">
+      <h3>Pre-Specified Analysis Plan</h3>
+      <p>For observational projects, the analysis plan is written before unblinding to outcomes: primary and secondary endpoints, covariate set, modeling approach, sensitivity analyses, and decisions on missingness. Deviations are documented, not hidden.</p>
+      <span class="tag b">Pre-registration</span><span class="tag b">Sensitivity</span>
+    </article>
+    <article class="card">
+      <h3>Mentor Communication</h3>
+      <p>Weekly written progress note: what shipped, what is blocked, what I need from the mentor by name. Calendar invites for any analytic decision that crosses a clinical judgment threshold. No surprise blockers at the end of the fellowship.</p>
+      <span class="tag c">Weekly Note</span><span class="tag c">Decisions Log</span>
+    </article>
+    <article class="card">
+      <h3>Figure Discipline</h3>
+      <p>Figures are generated by code, not by hand. Every figure in a manuscript ties back to a versioned script and a captured data snapshot. Reviewer-requested re-runs are a single command, not an archaeology project.</p>
+      <span class="tag">ggplot2</span><span class="tag">matplotlib</span><span class="tag">Quarto</span>
+    </article>
+    <article class="card">
+      <h3>Submission and Revision</h3>
+      <p>Cover letter, structured abstract, journal-specific formatting, blinded versus tracked-changes versions, response-to-reviewer letter with line-numbered references to the revised manuscript, and a tidy resubmission package. Boring on purpose.</p>
+      <span class="tag g">Cover Letter</span><span class="tag g">R2R</span><span class="tag g">Resubmission</span>
+    </article>
+  </div>
+
+  <h4>Dissemination targets</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">Society Meetings</div><div class="v">Society for Vascular Surgery (SVS), Vascular Annual Meeting (VAM), regional vascular societies</div></div>
+    <div class="kv"><div class="k">Journals</div><div class="v">JVS, JVS-Vascular Insights, Annals of Vascular Surgery, EJVES, J Endovasc Ther</div></div>
+    <div class="kv"><div class="k">Local</div><div class="v">Departmental M&amp;M, journal club, grand rounds, QI committee</div></div>
+    <div class="kv"><div class="k">Internal Artifacts</div><div class="v">Dashboards for service-line outcomes, one-pagers for division meetings</div></div>
+  </div>
+</section>
+
+<section class="pane" id="education">
+  <h2>Education, Exams, and Awards</h2>
+
+  <div class="timeline">
+    <div class="titem">
+      <div class="yr">2024</div>
+      <div class="ev">M.B.B.S., King Edward Medical University, Lahore</div>
+      <div class="ds">Five-year undergraduate medical degree with rotations in general surgery, neurosurgery, internal medicine, obstetrics, and pediatrics.</div>
+    </div>
+    <div class="titem">
+      <div class="yr">2024</div>
+      <div class="ev">USMLE Step 1: PASS</div>
+      <div class="ds">Cleared on first attempt; current focus is Step 2 CK with a target window aligned to fellowship start.</div>
+    </div>
+    <div class="titem">
+      <div class="yr">2025</div>
+      <div class="ev">Peer-Reviewed Publication, European Journal of Gastroenterology &amp; Hepatology</div>
+      <div class="ds">First-author meta-analysis of tegoprazan versus proton pump inhibitors across 15 RCTs and 5,000+ participants.</div>
+    </div>
+    <div class="titem">
+      <div class="yr">2024</div>
+      <div class="ev">Peer-Reviewed Publication, Asian Journal of Psychiatry</div>
+      <div class="ds">First-author meta-analysis of peripartum esketamine for post-partum depression prevention across 12 RCTs.</div>
+    </div>
+    <div class="titem">
+      <div class="yr">2026</div>
+      <div class="ev">Available for Vascular Surgery Research Fellowship</div>
+      <div class="ds">J-1 research visa sponsorship eligible. Targeting a May 2026 start, with categorical general surgery ERAS application planned for the subsequent cycle.</div>
+    </div>
+  </div>
+
+  <h4>Languages and tools at working fluency</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">Statistical</div><div class="v">R (tidyverse, survival, metafor, WeightIt), SPSS, Review Manager</div></div>
+    <div class="kv"><div class="k">Programming</div><div class="v">Python (pandas, scikit-learn, statsmodels), SQL, DuckDB</div></div>
+    <div class="kv"><div class="k">Writing</div><div class="v">LaTeX, Quarto, Microsoft Word with reference managers (Zotero, EndNote)</div></div>
+    <div class="kv"><div class="k">Collaboration</div><div class="v">Git, GitHub, Slack, structured weekly progress notes</div></div>
+  </div>
+
+  <h4>Languages spoken</h4>
+  <div class="kvs">
+    <div class="kv"><div class="k">English</div><div class="v">Professional working proficiency; comfortable presenting at rounds and conferences</div></div>
+    <div class="kv"><div class="k">Urdu</div><div class="v">Native</div></div>
+  </div>
+</section>
+
+</main>
+
+<section class="cta">
+  <h2>Contact</h2>
+  <p><a href="mailto:salmankhalid@kemu.edu.pk">salmankhalid@kemu.edu.pk</a> | +92 310 720 1553 | <a href="https://salman24012715.github.io">salman24012715.github.io</a></p>
+  <p style="font-size:.78rem;color:var(--muted);margin-top:.4rem">J-1 Research Visa Sponsorship Eligible | Available May 2026 | References available upon request</p>
+</section>
+
+<footer class="ft">Salman Khalid, MBBS | Vascular Surgery Research Portfolio | 2026</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('a');});
+    document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('a');});
+    b.classList.add('a');
+    document.getElementById(b.dataset.t).classList.add('a');
+    window.scrollTo({top: document.querySelector('.tabs').offsetTop - 60, behavior: 'smooth'});
+  });
+});
+</script>
+</body>
+</html>
